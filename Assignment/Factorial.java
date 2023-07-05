@@ -22,8 +22,7 @@ public class Factorial {
 			byte int1 = sc.nextByte();// using nextByte() which accepts only byte data as input
 
 			String result = factorial(int1).toString(); // factorial method is being invoked and return BigInteger
-														// Object
-														// with toString() method it is converted into string
+								    // Object with toString() method it is converted into string
 
 			System.out.println("The result is " + result);// printing the result
 
