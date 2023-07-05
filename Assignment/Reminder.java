@@ -31,8 +31,7 @@ public class Reminder {
 		} catch (Exception e) {// catching thrown exceptions to handle
 
 			if (e instanceof InputMismatchException) // handling the InputMismatchException with a user friendly message
-				System.out.println(
-						"Please enter number between the range of " + Integer.MIN_VALUE + " to " + Integer.MAX_VALUE);
+				System.out.println("Please enter number between the range of " + Integer.MIN_VALUE + " to " + Integer.MAX_VALUE);
 
 			// handling the ArithmeticException with a user friendly message
 			else if (e instanceof ArithmeticException)
