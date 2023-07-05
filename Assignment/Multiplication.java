@@ -11,8 +11,8 @@ import java.util.Scanner;
 public class Multiplication {
 
 	public static void main(String[] args) {
-		// Try with resource block is being used, so we don't need to explicitly close
-		// the scanner object
+		/* Try with resource block is being used, so we don't need to explicitly close
+		   the scanner object */
 
 		try (Scanner sc = new Scanner(System.in)) {// scanner object is initialized with source from console
 
