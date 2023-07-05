@@ -30,7 +30,7 @@ public class SquareRoot {
 				System.out.println("Please enter positive integer number!");
 
 			else if (e instanceof IllegalArgumentException) // handling the IllegalArgumentException with a user
-															// friendly message
+									// friendly message
 				System.out.println("SquareRoot of negative numbers is not supported!");
 
 			else
