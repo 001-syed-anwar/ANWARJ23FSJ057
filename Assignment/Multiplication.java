@@ -59,7 +59,7 @@ public class Multiplication {
 		int temp1 = (num1 > 0) ? num1 : num1 * -1; // making the numbers positive if they're negative
 		int temp2 = (num2 > 0) ? num2 : num2 * -1;
 
-		if (temp1 > Integer.MAX_VALUE / temp2) // if the product goes beyond the int range then throws exception
+		if (temp1 != 0 && temp2 != 0 && temp1 > Integer.MAX_VALUE / temp2) // if the product goes beyond the int range then throws exception
 			throw new IllegalArgumentException();
 
 		int product = num1 * num2; // multiplication performed by * operator
