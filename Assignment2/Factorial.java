@@ -4,13 +4,23 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
+ * <b>Assignment from Recursion topic</b>
+ * <p>
+ * This class contains a method that implements logic for computing factorial of
+ * a number along with the main method which is already programmed for taking
+ * user inputs and display the result.
  * 
  * @author Syed Anwar
  * @category recursion
  *
  */
 public class Factorial {
-
+	/**
+	 * The main method that is preprogrammed to accept relevant inputs and print the
+	 * output into the console to demonstrate the Factorial functionality.
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		/*
 		 * Try with resource block is being used, so we don't need to explicitly close
@@ -42,6 +52,8 @@ public class Factorial {
 	}
 
 	/**
+	 * This method does the computation of factorial.
+	 * 
 	 * @throws IllegalArgumentException
 	 * @param n as int
 	 * @return int
@@ -73,6 +85,8 @@ public class Factorial {
 	}
 
 	/**
+	 * This method does the computation of factorial with o(1) space complexity.
+	 *
 	 * @throws IllegalArgumentException
 	 * @param n as int
 	 * @return int
