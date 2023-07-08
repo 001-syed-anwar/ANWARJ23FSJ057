@@ -4,12 +4,22 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
+ * <b>Assignment from Arithmetic Operations topic</b>
+ * <p>
+ * This class contains a method that implements logic for Multiplication of two
+ * numbers along with the main method which is already programmed for taking
+ * user inputs and display the result.
  * 
  * @author syed anwar
  * @category Arithmetic operations
  */
 public class Multiplication {
-
+	/**
+	 * The main method that is preprogrammed to accept relevant inputs and print the
+	 * output into the console to demonstrate the multiplication functionality.
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		/* Try with resource block is being used, so we don't need to explicitly close
 		   the scanner object */
@@ -44,6 +54,7 @@ public class Multiplication {
 	}
 
 	/**
+	 * This method does the multiplication operation of two integers.
 	 * 
 	 * @param num1 as int
 	 * @param num2 as int
@@ -52,9 +63,7 @@ public class Multiplication {
 	public static int multiply(int num1, int num2) { // takes two int as arguments
 
 		// Added to avoid the result getting truncated and to prevent from incorrect
-		// results
-
-		// this logic will work for preventing overflow including double,long,float
+		// results. this logic will work for preventing overflow including double,long,float
 
 		int temp1 = (num1 > 0) ? num1 : num1 * -1; // making the numbers positive if they're negative
 		int temp2 = (num2 > 0) ? num2 : num2 * -1;
