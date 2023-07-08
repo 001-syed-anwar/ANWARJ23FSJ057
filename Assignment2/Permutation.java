@@ -42,12 +42,7 @@ public class Permutation {
 				System.out.println("One Possible permutation is " + permutation);// printing the result
 
 		} catch (Exception e) {// catching thrown exceptions to handle
-
-			if (e instanceof InputMismatchException) // handling the InputMismatchException with a user friendly message
-				System.out.println("Please enter element Positive Integers in range 0 to " + Integer.MAX_VALUE);
-
-			else
-				e.printStackTrace(); // Other unhandled Exceptions trace will be printed if there's any
+			e.printStackTrace(); // Other unhandled Exceptions trace will be printed if there's any
 		}
 
 	}
