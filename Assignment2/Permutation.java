@@ -92,24 +92,24 @@ public class Permutation {
 		/*
 		 * Loop through the frequency map and try all combination.
 		 */
-		for (char num : frequency.keySet()) {
+		for (char c : frequency.keySet()) {
 			/*
 			 * If the number has already been used before then directly go and see other
 			 * option.
 			 */
-			if (frequency.get(num) > 0) {
+			if (frequency.get(c) > 0) {
 				// Decrease the frequency count as we're going to use them.
-				frequency.put(num, frequency.get(num) - 1);
+				frequency.put(c, frequency.get(c) - 1);
 
-				// use the number and add into the list.
-				permutation.add(num);
+				// use the character and add into the list.
+				permutation.add(c);
 
 				// Recursively keep add adding elements until we found a completed permutation.
 				backtrackPermutation(ans, frequency, permutation, index + 1, n);
 
-				// While backtracking, undo the parts before recursion.
+				// While backtracking, undo the steps that was done before the recursion call.
 				permutation.remove(permutation.size() - 1);
-				frequency.put(num, frequency.get(num) + 1);
+				frequency.put(c, frequency.get(c) + 1);
 			}
 
 		}
