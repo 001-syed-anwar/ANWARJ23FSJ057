@@ -26,7 +26,7 @@ public class Palindrome {
 		 */
 		try (Scanner sc = new Scanner(System.in)) {// scanner object is initialized with source from console
 
-			System.out.println("Enter the number you want to perform sum of digits :");// prompting user to enter input
+			System.out.println("Enter the word you want to do palindrome check :");// prompting user to enter input
 
 			String word = sc.next();// using next() which accepts String data as input
 
