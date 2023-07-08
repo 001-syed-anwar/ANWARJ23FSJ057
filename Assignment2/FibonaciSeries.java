@@ -4,13 +4,23 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
+ * <b>Assignment from Recursion topic</b>
+ * <p>
+ * This class contains a method that implements logic for computing Fibonacci
+ * series along with the main method which is already programmed for taking user
+ * inputs and display the result.
  * 
  * @author Syed Anwar
  * @category recursion
  *
  */
 public class FibonaciSeries {
-
+	/**
+	 * The main method that is preprogrammed to accept relevant inputs and print the
+	 * output into the console to demonstrate the Fibonacci Series functionality.
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		/*
 		 * Try with resource block is being used, so we don't need to explicitly close
@@ -43,6 +53,8 @@ public class FibonaciSeries {
 	}
 
 	/**
+	 * This function recursively computes N'th fibonacci number and returns the
+	 * result.
 	 * @throws IllegalArgumentException
 	 * @param n as int
 	 * @return int
@@ -80,6 +92,8 @@ public class FibonaciSeries {
 	}
 
 	/**
+	 * This method does computation of Fibonaci Series with o(1) space complexity.
+	 * 
 	 * @throws IllegalArgumentException
 	 * @param n as int
 	 * @return int
