@@ -30,7 +30,7 @@ public class SumOfDigits {
 
 			System.out.println("Enter the number you want to perform sum of digits :");// prompting user to enter input
 
-			int int1 = sc.nextInt();// using nextInt() which accepts only byte data as input
+			int int1 = sc.nextInt();// using nextInt() which accepts only int data as input
 
 			int result = sumOfDigits(int1); // sumOfDigits method is being invoked
 
@@ -70,7 +70,7 @@ public class SumOfDigits {
 		 */
 		if (num == 0)
 			return sum;
-		// Adds the digits from ones,tens,.. recursively into the sum. 
+		// Adds the digits from ones,tens,.. recursively and stores into the sum. 
 		return sumOfDigits(num / 10, sum + num % 10);
 	}
 }
