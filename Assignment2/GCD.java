@@ -30,7 +30,7 @@ public class GCD {
 
 			System.out.println("Enter the First number you want to find gcd :");// prompting user to enter input
 
-			int a = sc.nextInt();// using nextInt() which accepts only byte data as input
+			int a = sc.nextInt();// using nextInt() which accepts only int data as input
 
 			if (a < 0)
 				throw new InputMismatchException();
