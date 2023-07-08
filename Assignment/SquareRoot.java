@@ -4,12 +4,23 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
+ * <b>Assignment from Arithmetic Operations topic</b>
+ * <p>
+ * This class contains a method that implements logic for computing Square root
+ * of numbers along with the main method which is already programmed for taking
+ * user inputs and display the result.
  * 
  * @author syed anwar
  * @category Arithmetic operations
  */
 public class SquareRoot {
-
+	/**
+	 * The main method that is preprogrammed to accept relevant inputs and print the
+	 * output into the console to demonstrate the square root
+	 * functionality.
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		/* Try with resource block is being used, so we don't need to explicitly close
 		   the scanner object */
@@ -39,6 +50,7 @@ public class SquareRoot {
 	}
 
 	/**
+	 * This method does the computation of square root of integers.
 	 * 
 	 * @param number that we want to find square root
 	 * @throws IllegalArgumentException
