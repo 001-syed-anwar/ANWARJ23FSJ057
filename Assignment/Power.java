@@ -5,11 +5,23 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
+ * <b>Assignment from Arithmetic Operations topic</b>
+ * <p>
+ * This class contains a method that implements logic for computing power
+ * exponentiation of numbers along with the main method which is already
+ * programmed for taking user inputs and display the result.
  * 
  * @author syed anwar
  * @category Arithmetic operations
  */
 public class Power {
+	/**
+	 * The main method that is preprogrammed to accept relevant inputs and print the
+	 * output into the console to demonstrate the power exponentiation
+	 * functionality.
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		/* Try with resource block is being used, so we don't need to explicitly close
 		   the scanner object */
@@ -50,6 +62,7 @@ public class Power {
 	}
 
 	/**
+	 * This method does the computation of power exponentiation of integers.
 	 * 
 	 * @param base     as int
 	 * @param exponent as int
@@ -79,14 +92,15 @@ public class Power {
 	}
 
 	/**
+	 * This method does the computation of power exponentiation of integers. instead
+	 * of int data, BigInteger is being used so computation of big numbers also
+	 * possible.
 	 * 
 	 * @param base     as BigInteger
 	 * @param exponent as int
 	 * @throws InverseException
 	 * @return return the power
 	 */
-	// instead of int BigInteger is being used so computation of big numbers also
-	// possible.
 	public static BigInteger power(BigInteger base, int exponent) {
 		if (exponent < 0)
 			throw new InverseException();
@@ -100,11 +114,12 @@ public class Power {
 }
 
 /**
+ * This class is a custom exception for throwing exception when user tries to
+ * input exponent as negative integer
  * 
  * @author syed anwar
  *
  */
-//Added a custom exception for throwing exception when user tries to input exponent as negative integer
 class InverseException extends RuntimeException {
 	private static final long serialVersionUID = 1L;
 
