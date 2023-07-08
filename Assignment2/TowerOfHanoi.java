@@ -4,13 +4,23 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
+ * <b>Assignment from Recursion topic</b>
+ * <p>
+ * This class contains a method that implements logic for Tower of Hanoi problem
+ * along with the main method which is already programmed for taking user inputs
+ * and display the result.
  * 
  * @author Syed Anwar
  * @category Recursion
  *
  */
 public class TowerOfHanoi {
-
+	/**
+	 * The main method that is preprogrammed to accept relevant inputs and print the
+	 * output into the console to demonstrate the Tower of Hanoi problem's solution.
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		/*
 		 * Try with resource block is being used, so we don't need to explicitly close
@@ -47,19 +57,17 @@ public class TowerOfHanoi {
 	}
 
 	/**
+	 * <p>This solve recursive method help us solve the <i>Tower Of Hanoi</i> Puzzle We're
+	 * taking number of disks as int and the three rods as char. when passing the
+	 * three rods, we first pass the source rod or the starting position of disks
+	 * where all the disks are initially present.Then, we pass the auxiliary or the
+	 * helper rod and we finally pass the destination rod as the last argument.
 	 * 
 	 * @param disks as int
 	 * @param rod1  as String
 	 * @param rod2  as String
 	 * @param rod3  as String
 	 * @throws IllegalArgumentException
-	 */
-	/*
-	 * This solve recursive method help us solve the Tower Of Hanoi Puzzle We're
-	 * taking number of disks as int and the three rods as char. when passing the
-	 * three rods, we first pass the source rod or the starting position of disks
-	 * where all the disks are initially present.Then, we pass the auxiliary or the
-	 * helper rod and we finally pass the destination rod as the last argument.
 	 */
 	public static void solve(int disks, String rod1, String rod2, String rod3) {
 		/*
