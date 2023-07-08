@@ -63,7 +63,7 @@ public class Factorial {
 
 		BigInteger ans = new BigInteger("1");
 
-		for (int i = n; i > 0; i--) // iterating from n to 1 to and multiplying all the number that we encounter
+		for (int i = n; i > 0; i--) // iterating from n to 1 and multiplying all the number that we encounter
 			ans = ans.multiply(new BigInteger(String.valueOf(i)));
 
 		return ans; // returns BigInteger
