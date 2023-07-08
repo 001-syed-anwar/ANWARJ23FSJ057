@@ -3,7 +3,24 @@ package assignments1;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * <b>Assignment from Arithmetic Operations topic</b>
+ * <p>
+ * This class contains a method that implements logic for division of two
+ * numbers along with the main method which is already programmed for taking
+ * user inputs and display the result.
+ * 
+ * @author Syed anwar
+ * @category Arithmetic Operations
+ *
+ */
 public class Division {
+	/**
+	 * The main method that is preprogrammed to accept relevant inputs and print the
+	 * output into the console to demonstrate the Division functionality.
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		/* Try with resource block is being used, so we don't need to explicitly close
 		   the scanner object */
@@ -39,6 +56,7 @@ public class Division {
 	}
 
 	/**
+	 * This method does the division operation of two integers.
 	 * 
 	 * @param a as double
 	 * @param b as double
