@@ -40,17 +40,6 @@ public class DynamicArray {
 	}
 
 	/**
-	 * Parameterized constructor.
-	 * 
-	 * @param size as int
-	 */
-	public DynamicArray(int size) {
-		// initializes array with size given by user.
-		this.size = size;
-		this.arr = new int[this.size];
-	}
-
-	/**
 	 * This function returns the size of the Dynamic Array.
 	 * 
 	 * @return int
