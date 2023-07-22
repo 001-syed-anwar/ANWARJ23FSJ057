@@ -35,7 +35,7 @@ public class ResizeArray {
 		// temp array of new size
 		int[] temp = new int[size];
 
-		// cop the array elements into temp array
+		// copy the array elements into temp array
 		for (int i = 0; i < size; i++) {
 			if (i >= arr.length)
 				break;
