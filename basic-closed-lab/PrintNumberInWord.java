@@ -85,13 +85,13 @@ public class PrintNumberInWord {
 
 		// for thousands
 		if (digit > 3) {
-			// extract the lakhs.
+			// extract the thousands.
 			int temp = number % 100000;
 
-			// number of lakhs
+			// number of thousands
 			temp = temp / 1000;
 
-			// lakhs in words
+			// thousands in words
 			if (temp != 0) {
 				if (temp <= 19)
 					bf.append(getTill19(temp));
@@ -106,13 +106,13 @@ public class PrintNumberInWord {
 
 		// for hundreds
 		if (digit > 2) {
-			// extract the lakhs.
+			// extract the hundreds.
 			int temp = number % 1000;
 
-			// number of lakhs
+			// number of hundreds
 			temp = temp / 100;
 
-			// lakhs in words
+			// hundreds in words
 			if (temp != 0) {
 				bf.append(getTill19(temp));
 				bf.append(" hundred and ");
