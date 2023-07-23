@@ -15,11 +15,13 @@ public class CheckPrime {
 	}
 
 	public static boolean isPrime(int num) {
+		if(num<=1)
+			return false;
 		//loop till the root of number, to find it's divisors
-		for (int i = 2; i * i <= num; i++) {
+		for (int i = 2; i * i <= num; i++)
 			if (num % i == 0)
 				return false;
-		}
+		
 		return true;
 	}
 }
