@@ -50,7 +50,7 @@ public class PrimitiveDeclarationAndTypeCating {
 		 * within the range of byte. It is called explicit type casting, when we try to
 		 * assign large sized data type variables/values into smaller ones. we can
 		 * identify which data type is smaller, which one is greater by their byte
-		 * values.
+		 * size.
 		 */
 		b2 = (byte) i2;
 
