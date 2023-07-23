@@ -29,7 +29,7 @@ public class PrimitiveDeclarationAndTypeCating {
 
 	public static void main(String[] args) {
 		/*
-		 * Local variables must have been initialized, before it is being using.
+		 * Local variables must have been initialized, before it is being used.
 		 */
 
 		// local variables
