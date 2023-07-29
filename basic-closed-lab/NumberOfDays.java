@@ -6,7 +6,7 @@ public class NumberOfDays {
 	public static void main(String[] args) {
 		try (Scanner sc = new Scanner(System.in)) {
 			// prompting user to enter input
-			System.out.println("Enter the date in (mm-yyyy) format, for eg: (01:0001) ");
+			System.out.println("Enter the date in (mm-yyyy) format, for eg: (01-0001) ");
 
 			String date = sc.next();
 
