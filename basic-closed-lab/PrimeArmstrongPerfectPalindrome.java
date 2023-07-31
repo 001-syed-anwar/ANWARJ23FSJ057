@@ -60,7 +60,7 @@ public class PrimeArmstrongPerfectPalindrome {
 		 */
 		for (int i = 2; i * i <= end; i++) {
 
-			// optimisation for not updating the numbers which are already updated.
+			// optimisation for not to update the numbers which are already updated.
 			if(temp[i]) continue;
 
 			/*
