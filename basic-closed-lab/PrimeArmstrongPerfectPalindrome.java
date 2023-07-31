@@ -34,8 +34,8 @@ public class PrimeArmstrongPerfectPalindrome {
 		// the prime number list
 		List<Integer> list = new ArrayList<Integer>();
 
-		// there's no negative prime numbers.
-		if (end < 0)
+		// there's no prime numbers less than 2.
+		if (end < 2)
 			return list;
 		/*
 		 * Creating a temporary array of size end+1, by default all elements are 'false'
@@ -59,6 +59,9 @@ public class PrimeArmstrongPerfectPalindrome {
 		 * prime number.
 		 */
 		for (int i = 2; i * i <= end; i++) {
+
+			// optimisation for not updating the numbers which are already updated.
+			if(temp[i]) continue;
 
 			/*
 			 * inner loop is going to assign 'true' for all multiples of i'th numbers.
