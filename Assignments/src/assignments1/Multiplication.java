@@ -73,7 +73,7 @@ public class Multiplication {
 
 		int product = num1 * num2; // multiplication performed by * operator
 
-		return product; // return int
+		return product; // return int 
 	}
 
 }
