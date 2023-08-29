@@ -45,10 +45,12 @@ public class Division {
 				System.out.println(
 						"Please enter number between the range of " + Integer.MIN_VALUE + " to " + Integer.MAX_VALUE);
 
-			// since we're using double we don't need to explicitly handle the exception of
-			// division by zero
-			// else if(e instanceof ArithmeticException) System.out.println("The result is
-			// Infinity");
+			/*
+			 * since we're using double we don't need to explicitly handle the exception of
+			 * division by zero
+			 * else if(e instanceof ArithmeticException) System.out.println("The result is
+			 * Infinity"); 
+			 */
 
 			else
 				e.printStackTrace(); // Other unhandled Exceptions trace will be printed if there's any
