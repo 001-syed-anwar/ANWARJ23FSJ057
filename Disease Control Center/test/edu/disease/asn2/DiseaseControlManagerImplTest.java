@@ -7,15 +7,15 @@ import java.util.UUID;
 import org.junit.Before;
 import org.junit.Test;
 
-public class DeviceControlManagerImplTest {
-	DeviceControlManagerImpl obj;
+public class DiseaseControlManagerImplTest {
+	DiseaseControlManagerImpl obj;
 	UUID patientId = UUID.randomUUID(),
 		disease1Id = UUID.randomUUID(),
 		disease2Id = UUID.randomUUID();
 
 	@Before
 	public void setup() {
-		obj = new DeviceControlManagerImpl();
+		obj = new DiseaseControlManagerImpl();
 		Patient p1 = obj.addPatient("Christiano", "Ronaldo", 1, 1);
 		p1.setPatientId(patientId);
 		obj.addPatientInArray(p1);

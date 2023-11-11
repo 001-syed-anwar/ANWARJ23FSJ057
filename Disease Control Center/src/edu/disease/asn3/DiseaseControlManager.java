@@ -1,4 +1,4 @@
-package edu.disease.asn2;
+package edu.disease.asn3;
 
 import java.util.UUID;
 
@@ -9,7 +9,7 @@ import java.util.UUID;
  * @author Syed Anwar
  *
  */
-public interface DeviceControlManager {
+public interface DiseaseControlManager {
 
 	/**
 	 * Adds a new disease to the Application
@@ -62,4 +62,14 @@ public interface DeviceControlManager {
 	 * @param exposure
 	 */
 	void addExposureToPatient(UUID patientId, Exposure exposure);
+	
+	/**
+	 * 
+	 */
+	Disease[] getDiseases();
+	
+	/**
+	 * 
+	 */
+	Patient[] getPatients();
 }

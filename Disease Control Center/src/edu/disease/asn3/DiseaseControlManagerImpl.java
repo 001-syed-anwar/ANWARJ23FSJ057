@@ -1,4 +1,4 @@
-package edu.disease.asn2;
+package edu.disease.asn3;
 
 import java.util.UUID;
 
@@ -8,9 +8,9 @@ import java.util.UUID;
  * @author Syed Anwar
  *
  */
-public class DeviceControlManagerImpl implements DeviceControlManager {
+public class DiseaseControlManagerImpl implements DiseaseControlManager {
 	private Disease[] diseases = new Disease[10];
-	private Patient[] patients = new Patient[5];
+	private Patient[] patients = new Patient[10];
 	private int disPointer, patPointer;
 
 	public void addDiseaseInArray(Disease d) {
@@ -82,5 +82,15 @@ public class DeviceControlManagerImpl implements DeviceControlManager {
 				break;
 			}
 		return patient;
+	}
+
+	@Override
+	public Disease[] getDiseases() {
+		return diseases;
+	}
+
+	@Override
+	public Patient[] getPatients() {
+		return patients;
 	}
 }
