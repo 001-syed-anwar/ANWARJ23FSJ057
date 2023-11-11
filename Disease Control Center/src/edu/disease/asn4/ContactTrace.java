@@ -23,40 +23,33 @@ public class ContactTrace {
 		for (Exposure exposure : patient.getExposures()) {
 
 			/*
-			 * further computations take place only when the found exposure is a direct
+			 * further computations take place only when the current exposure is a direct
 			 * exposure
 			 */
 			if (exposure.getExposureType().equalsIgnoreCase("D")) {
 
+				// retrieving the patient with it's ID from the current exposure.
 				Patient exposedPatient = diseaseControlManager.getPatient(exposure.getPatientId());
 
+				// updating the patientZero by comparing the current exposed patient
+				if (!patientZero.isExposed()
+						|| patientZero.getExposureDateTime().compareTo(exposure.getDateTime()) > 0) {
+					patientZero.setExposed(true);
+					patientZero.setExposureDateTime(exposure.getDateTime());
+					patientZero.setPatient(exposedPatient);
+				}
+
+				PatientZero foundExposedPatient = findPatientZero(exposedPatient);
+
 				/*
-				 * checking once if the exposed patient is valid patient that exist in
-				 * diseaseControlManager class's patients array.
+				 * updating the patientZero by comparing the current exposed patient's earliest
+				 * exposed patient.
 				 */
-				if (exposedPatient != null) {
-					PatientZero foundExposedPatient = findPatientZero(exposedPatient);
-
-					// updating the first person between current exposure
-					if (!patientZero.isExposed()
-							|| patientZero.getExposureDateTime().compareTo(exposure.getDateTime()) > 0) {
+				if (foundExposedPatient.isExposed()) {
+					if (patientZero.getExposureDateTime().compareTo(foundExposedPatient.getExposureDateTime()) > 0) {
 						patientZero.setExposed(true);
-						patientZero.setExposureDateTime(exposure.getDateTime());
-						patientZero.setPatient(exposedPatient);
-					}
-
-					/*
-					 * updating the first person between the current exposed patient's exposed
-					 * people.
-					 */
-					if (foundExposedPatient.isExposed()) {
-						if (!patientZero.isExposed() || patientZero.getExposureDateTime()
-								.compareTo(foundExposedPatient.getExposureDateTime()) > 0) {
-							patientZero.setExposed(true);
-							patientZero.setExposureDateTime(foundExposedPatient.getExposureDateTime());
-							patientZero.setPatient(foundExposedPatient.getPatient());
-						}
-
+						patientZero.setExposureDateTime(foundExposedPatient.getExposureDateTime());
+						patientZero.setPatient(foundExposedPatient.getPatient());
 					}
 				}
 			}
@@ -96,27 +89,27 @@ public class ContactTrace {
 
 		Exposure e1 = new Exposure(p2.getPatientId());
 		e1.setExposureType(Exposure.DIRECT_EXPOSURE);
-		e1.setDateTime(LocalDateTime.of(2018, 10, 1, 12, 30));
+		e1.setDateTime(LocalDateTime.of(2025, 10, 1, 12, 30));
 		Exposure e2 = new Exposure(p3.getPatientId());
 		e2.setExposureType(Exposure.DIRECT_EXPOSURE);
-		e2.setDateTime(LocalDateTime.of(2017, 10, 1, 12, 30));
+		e2.setDateTime(LocalDateTime.of(2027, 10, 1, 12, 30));
 		Exposure e3 = new Exposure(p4.getPatientId());
 		e3.setExposureType(Exposure.DIRECT_EXPOSURE);
-		e3.setDateTime(LocalDateTime.of(2014, 10, 1, 12, 30));
+		e3.setDateTime(LocalDateTime.of(2026, 10, 1, 12, 30));
 
 		Exposure e4 = new Exposure(p5.getPatientId());
 		e4.setExposureType(Exposure.DIRECT_EXPOSURE);
-		e4.setDateTime(LocalDateTime.of(2016, 10, 1, 12, 30));
+		e4.setDateTime(LocalDateTime.of(2024, 10, 1, 12, 30));
 		Exposure e5 = new Exposure(p6.getPatientId());
 		e5.setExposureType(Exposure.DIRECT_EXPOSURE);
-		e5.setDateTime(LocalDateTime.of(2021, 1, 1, 12, 30));
+		e5.setDateTime(LocalDateTime.of(2029, 1, 1, 12, 30));
 		Exposure e6 = new Exposure(p7.getPatientId());
 		e6.setExposureType(Exposure.DIRECT_EXPOSURE);
-		e6.setDateTime(LocalDateTime.of(2020, 6, 1, 12, 30));
+		e6.setDateTime(LocalDateTime.of(2028, 6, 1, 12, 30));
 
 		Exposure e7 = new Exposure(p9.getPatientId());
 		e7.setExposureType(Exposure.DIRECT_EXPOSURE);
-		e7.setDateTime(LocalDateTime.of(2022, 5, 1, 12, 30));
+		e7.setDateTime(LocalDateTime.of(2030, 5, 1, 12, 30));
 		Exposure e8 = new Exposure(p10.getPatientId());
 		e8.setExposureType(Exposure.DIRECT_EXPOSURE);
 		e8.setDateTime(LocalDateTime.of(2022, 9, 1, 12, 30));
