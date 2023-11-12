@@ -1,4 +1,4 @@
-package edu.disease.asn4;
+package edu.disease.asn6;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -19,7 +19,7 @@ public class ContactTrace {
 		PatientZero patientZero = new PatientZero();
 		patientZero.setPatient(patient);
 
-		// Iterating though the patient exposures array
+		// Iterating though the patient exposures list
 		for (Exposure exposure : patient.getExposures()) {
 
 			/*
@@ -66,25 +66,25 @@ public class ContactTrace {
 		d.addDisease("Hypertension", false);
 		d.addDisease("Diabetes", false);
 
-		Patient p1 = d.addPatient("patient1", "1", 1, 3);
+		Patient p1 = d.addPatient("patient1", "1");
 		p1.setPatientId(UUID.randomUUID());
-		Patient p2 = d.addPatient("patient2", "2", 1, 5);
+		Patient p2 = d.addPatient("patient2", "2");
 		p2.setPatientId(UUID.randomUUID());
-		Patient p3 = d.addPatient("patient3", "3", 1, 1);
+		Patient p3 = d.addPatient("patient3", "3");
 		p3.setPatientId(UUID.randomUUID());
-		Patient p4 = d.addPatient("patient4", "4", 1, 2);
+		Patient p4 = d.addPatient("patient4", "4");
 		p4.setPatientId(UUID.randomUUID());
-		Patient p5 = d.addPatient("patient5", "5", 1, 1);
+		Patient p5 = d.addPatient("patient5", "5");
 		p5.setPatientId(UUID.randomUUID());
-		Patient p6 = d.addPatient("patient6", "6", 1, 1);
+		Patient p6 = d.addPatient("patient6", "6");
 		p6.setPatientId(UUID.randomUUID());
-		Patient p7 = d.addPatient("patient7", "7", 1, 1);
+		Patient p7 = d.addPatient("patient7", "7");
 		p7.setPatientId(UUID.randomUUID());
-		Patient p8 = d.addPatient("patient8", "8", 1, 1);
+		Patient p8 = d.addPatient("patient8", "8");
 		p8.setPatientId(UUID.randomUUID());
-		Patient p9 = d.addPatient("patient9", "9", 1, 1);
+		Patient p9 = d.addPatient("patient9", "9");
 		p9.setPatientId(UUID.randomUUID());
-		Patient p10 = d.addPatient("patient10", "10", 1, 1);
+		Patient p10 = d.addPatient("patient10", "10");
 		p10.setPatientId(UUID.randomUUID());
 
 		Exposure e1 = new Exposure(p2.getPatientId());
