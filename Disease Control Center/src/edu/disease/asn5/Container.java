@@ -20,11 +20,4 @@ public class Container<T> {
 	public int size() {
 		return arr.length;
 	}
-	
-	public static void main(String[] args) {
-		Container<Integer> c=new Container<>(10);
-		Integer object = c.get(0);
-		System.out.println(object);
-		System.out.println(c.size());
-	}
 }
