@@ -65,12 +65,12 @@ public interface DiseaseControlManager {
 	void addExposureToPatient(UUID patientId, Exposure exposure);
 	
 	/**
-	 * 
+	 * returns List of Disease
 	 */
 	List<Disease> getDiseases();
 	
 	/**
-	 * 
+	 * returns List of Patient
 	 */
 	List<Patient> getPatients();
 }

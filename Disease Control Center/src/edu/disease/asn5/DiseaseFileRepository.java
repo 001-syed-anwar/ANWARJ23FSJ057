@@ -7,12 +7,22 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+/**
+ * This class Serializes and Deserializes Diseases and Patients.
+ * 
+ * @author Syed Anwar
+ */
 public class DiseaseFileRepository {
 	private String folderPath = ".";
 
+	/**
+	 * Getter method of folderPath
+	 * 
+	 * @return
+	 */
 	public String getFolderPath() {
-		File file = new java.io.File(folderPath);
-		String path=null;;
+		File file = new File(folderPath);
+		String path = null;
 		try {
 			path = file.getCanonicalPath();
 		} catch (IOException e) {
@@ -21,19 +31,40 @@ public class DiseaseFileRepository {
 		return path;
 	}
 
+	/**
+	 * Setter method of folderPath
+	 * 
+	 * @param folderPath
+	 */
 	public void setFolderPath(String folderPath) {
+		File f = new File(folderPath);
+		// If directories does not exists, then creates and sets the folderPath.
+		if (!f.isDirectory() && !f.mkdirs())
+			throw new IllegalArgumentException("Invalid drive");
 		this.folderPath = folderPath;
 	}
 
+	/**
+	 * Save method serializes diseases and patients
+	 * 
+	 * @param diseases
+	 * @param patients
+	 */
 	public void save(Disease[] diseases, Patient[] patients) {
-		doSerialize(diseases,folderPath,"diseases.dat");
-		doSerialize(patients,folderPath,"patients.dat");
+		doSerialize(diseases, folderPath, "diseases.dat");
+		doSerialize(patients, folderPath, "patients.dat");
 	}
 
+	/**
+	 * Init method deserializes the diseases and patients.
+	 * 
+	 * @param folderPath
+	 * @return
+	 */
 	public DiseaseAndPatient init(String folderPath) {
-		Disease[] diseases=(Disease[])doDeserialize(folderPath,"diseases.dat");
-		Patient[] patients=(Patient[])doDeserialize(folderPath,"patients.dat");
-		DiseaseAndPatient obj=new DiseaseAndPatient();
+		Disease[] diseases = (Disease[]) doDeserialize(folderPath, "diseases.dat");
+		Patient[] patients = (Patient[]) doDeserialize(folderPath, "patients.dat");
+		DiseaseAndPatient obj = new DiseaseAndPatient();
 		obj.setDiseases(diseases);
 		obj.setPatients(patients);
 		return obj;
@@ -47,49 +78,15 @@ public class DiseaseFileRepository {
 			e.printStackTrace();
 		}
 	}
-	
+
 	private Object doDeserialize(String folderPath, String fileName) {
-		Object readObject=null;
-		try(FileInputStream fis=new FileInputStream(folderPath+"\\"+fileName);
-				ObjectInputStream deserialize=new ObjectInputStream(fis);){
+		Object readObject = null;
+		try (FileInputStream fis = new FileInputStream(folderPath + "\\" + fileName);
+				ObjectInputStream deserialize = new ObjectInputStream(fis);) {
 			readObject = deserialize.readObject();
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return readObject;
-	}
-	
-	public static void main(String[] args) {
-//		UUID d1Id=UUID.randomUUID();
-//		UUID d2Id=UUID.randomUUID();
-//		Disease d1=new InfectiousDisease();
-//		d1.setName("corona");
-//		d1.setDiseaseId(d1Id);
-//		Disease d2=new InfectiousDisease();
-//		d2.setName("tb");
-//		d2.setDiseaseId(d2Id);
-//		Disease[] diseases= {d1,d2};
-//		
-//		Patient p1=new Patient(2,3);
-//		p1.addDiseaseId(d1Id);
-//		p1.setFirstName("syed");
-//		p1.setLastName("anwar");
-//		Patient p2=new Patient(1,1);
-//		p2.addDiseaseId(d2Id);
-//		p2.setFirstName("rahman");
-//		p2.setLastName("khan");
-//		Patient[] patients= {p1,p2};
-//		
-//		DiseaseFileRepository rep=new DiseaseFileRepository();
-//		rep.save(diseases, patients);
-//		DiseaseAndPatient init = rep.init(".");
-//		diseases=init.getDiseases();
-//		for(Disease d:diseases) {
-//			System.out.println(d.getName());
-//		}
-//		patients=init.getPatients();
-//		for(Patient p:patients) {
-//			System.out.println(p);
-//		}
 	}
 }

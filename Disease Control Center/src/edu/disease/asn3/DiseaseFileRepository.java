@@ -7,9 +7,19 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+/**
+ * This class Serializes and Deserializes Diseases and Patients.
+ * 
+ * @author Syed Anwar
+ */
 public class DiseaseFileRepository {
 	private String folderPath = ".";
 
+	/**
+	 * Getter method of folderPath
+	 * 
+	 * @return
+	 */
 	public String getFolderPath() {
 		File file = new File(folderPath);
 		String path = null;
@@ -21,24 +31,36 @@ public class DiseaseFileRepository {
 		return path;
 	}
 
+	/**
+	 * Setter method of folderPath
+	 * 
+	 * @param folderPath
+	 */
 	public void setFolderPath(String folderPath) {
-		File f=new File(folderPath);
-		if(!f.isDirectory()) {
-//			System.out.println("Invalid path");
-//			return;
-			if(!f.mkdirs()) {
-				System.out.println("Invalid drive");
-				return;
-			}
-		}
+		File f = new File(folderPath);
+		// If directories does not exists, then creates and sets the folderPath.
+		if (!f.isDirectory() && !f.mkdirs())
+			throw new IllegalArgumentException("Invalid drive");
 		this.folderPath = folderPath;
 	}
 
+	/**
+	 * Save method serializes diseases and patients
+	 * 
+	 * @param diseases
+	 * @param patients
+	 */
 	public void save(Disease[] diseases, Patient[] patients) {
 		doSerialize(diseases, folderPath, "diseases.dat");
 		doSerialize(patients, folderPath, "patients.dat");
 	}
 
+	/**
+	 * Init method deserializes the diseases and patients.
+	 * 
+	 * @param folderPath
+	 * @return
+	 */
 	public DiseaseAndPatient init(String folderPath) {
 		Disease[] diseases = (Disease[]) doDeserialize(folderPath, "diseases.dat");
 		Patient[] patients = (Patient[]) doDeserialize(folderPath, "patients.dat");

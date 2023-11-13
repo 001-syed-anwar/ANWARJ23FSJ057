@@ -29,7 +29,6 @@ public class DiseaseControlManagerImpl implements DiseaseControlManager {
 		else
 			obj = new NonInfectiousDisease();
 		obj.setName(name);
-		addDiseaseInArray(obj);
 		return obj;
 	}
 
@@ -60,7 +59,6 @@ public class DiseaseControlManagerImpl implements DiseaseControlManager {
 		Patient patient = new Patient(maxDiseases, maxExposures);
 		patient.setFirstName(firstName);
 		patient.setLastName(lastName);
-		addPatientInArray(patient);
 		return patient;
 	}
 

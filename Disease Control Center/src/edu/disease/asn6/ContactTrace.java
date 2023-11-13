@@ -1,12 +1,25 @@
 package edu.disease.asn6;
 
+/**
+ * This class has useful method to do Contact Tracing 
+ * @author Syed Anwar
+ */
 public class ContactTrace {
 	private DiseaseControlManager diseaseControlManager;
 
+	/**
+	 * 
+	 * @param diseaseControlManager
+	 */
 	public ContactTrace(DiseaseControlManager diseaseControlManager) {
 		this.diseaseControlManager = diseaseControlManager;
 	}
 
+	/**
+	 * Finds the earliest exposed patient of a patient.
+	 * @param patient
+	 * @return
+	 */
 	public PatientZero findPatientZero(Patient patient) {
 		/*
 		 * The default answer of patient who doesn't have any direct exposures is the
@@ -16,7 +29,7 @@ public class ContactTrace {
 		PatientZero patientZero = new PatientZero();
 		patientZero.setPatient(patient);
 
-		// Iterating though the patient exposures list
+		// Iterating though the patient exposures array
 		for (Exposure exposure : patient.getExposures()) {
 
 			/*

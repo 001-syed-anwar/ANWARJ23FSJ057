@@ -64,12 +64,12 @@ public interface DiseaseControlManager {
 	void addExposureToPatient(UUID patientId, Exposure exposure);
 	
 	/**
-	 * 
+	 * returns array of Disease
 	 */
 	Disease[] getDiseases();
 	
 	/**
-	 * 
+	 * returns array of patient
 	 */
 	Patient[] getPatients();
 }

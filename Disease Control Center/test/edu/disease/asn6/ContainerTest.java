@@ -1,4 +1,4 @@
-package edu.disease.asn5;
+package edu.disease.asn6;
 
 import static org.junit.Assert.assertEquals;
 

@@ -14,9 +14,6 @@ import java.util.UUID;
  *
  */
 public class Patient implements Serializable {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -4568340688183902786L;
 	private UUID patientIds;
 	private List<UUID> diseaseIds;

@@ -10,9 +10,6 @@ import java.io.Serializable;
  */
 public class NonInfectiousDisease extends Disease implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -262517088491057267L;
 
 	/**

@@ -8,14 +8,23 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.List;
 
+/**
+ * This class Serializes and Deserializes Diseases and Patients.
+ * 
+ * @author Syed Anwar
+ */
 @SuppressWarnings("unchecked")
 public class DiseaseFileRepository {
 	private String folderPath = ".";
 
+	/**
+	 * Getter method of folderPath
+	 * 
+	 * @return
+	 */
 	public String getFolderPath() {
-		File file = new java.io.File(folderPath);
+		File file = new File(folderPath);
 		String path = null;
-		;
 		try {
 			path = file.getCanonicalPath();
 		} catch (IOException e) {
@@ -24,10 +33,24 @@ public class DiseaseFileRepository {
 		return path;
 	}
 
+	/**
+	 * Setter method of folderPath
+	 * 
+	 * @param folderPath
+	 */
 	public void setFolderPath(String folderPath) {
+		File f=new File(folderPath);
+		if(!f.isDirectory() && !f.mkdirs()) 
+			throw new IllegalArgumentException("Invalid drive");
 		this.folderPath = folderPath;
 	}
-
+	
+	/**
+	 * Save method serializes diseases and patients
+	 * 
+	 * @param diseases
+	 * @param patients
+	 */
 	public void save(List<Disease> diseases, List<Patient> patients) {
 		doSerialize(diseases, folderPath, "diseases.dat");
 		doSerialize(patients, folderPath, "patients.dat");
